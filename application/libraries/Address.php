@@ -1,7 +1,7 @@
-<?php   
+<?php
 if(!defined('BASEPATH')) EXIT('No direct script asscess allowed');
-  
-class Address extends Smarty {   
+
+class Address extends Smarty {
     private $ak = 'K2RTFGsBXGdwCXGj2gO8SprVQyDfCdMP';           //百度开发者ak密匙
     private $ip;        //IP地址
     private $lat;       //经度
@@ -12,7 +12,7 @@ class Address extends Smarty {
         $this->ip = $this->getIP();
     }
 
-    //根据IP获取省份， 城市信息(默认为当前访问ip，可传入ip地址) 
+    //根据IP获取省份， 城市信息(默认为当前访问ip，可传入ip地址)
     //注意：只能定位到城市，无法定位到具体街道
     function get_address($ip='')
     {
@@ -43,7 +43,7 @@ class Address extends Smarty {
     {
         $ak = $this->ak;
         $lat = empty($lat) ? $this->lat : $lat;
-        $lng = empty($lng) ? $this->lng : $lng;  
+        $lng = empty($lng) ? $this->lng : $lng;
         $url = "http://api.map.baidu.com/geocoder/v2/?&location=".$lat.",".$lng."&output=json&pois=1&ak=".$ak."";
         $res = $this->curl_get($url);
         $res = json_decode($res);
@@ -93,4 +93,4 @@ class Address extends Smarty {
         curl_close($ch);
         return $output;
     }
-} 
+}

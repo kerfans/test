@@ -366,5 +366,9 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 
+//连接redis配置
+$config['host']   =  '127.0.0.1';
+$config['port']   =  '6379';
+$config['timeout']   =  '0'; //链接时长 (可选, 默认为 0 ，不限链接时间)
 /* End of file config.php */
 /* Location: ./application/config/config.php */

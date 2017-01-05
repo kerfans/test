@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('Cismarty','Address');
+$autoload['libraries'] = array('Cismarty','Address','Myredis');
 
 
 /*
